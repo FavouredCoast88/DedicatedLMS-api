@@ -12,7 +12,8 @@ const createArticle = (title, author, content) => {
         id: nextId++,
         title,
         author,
-        content
+        content,
+        published: false
     };
 
     articles.push(article);
@@ -62,11 +63,27 @@ const updateArticle = (id, title, author, content) => {
     return article;
 };
 
+const publishArticle = (id) => {
+
+    const article = articles.find(
+        article => article.id === id
+    );
+
+    if (!article) {
+        return null;
+    }
+
+    article.published = true;
+
+    return article;
+};
+
 module.exports = {
     getAllArticles,
     createArticle,
     getArticleById,
     searchArticles,
     deleteArticle,
-    updateArticle
+    updateArticle,
+    publishArticle
 };

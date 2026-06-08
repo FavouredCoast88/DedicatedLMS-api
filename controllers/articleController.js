@@ -1,5 +1,6 @@
 
 const articleService = require('../services/articleService');
+const logger = require('../services/logger');
 //GET /articles
 const getAllArticles = (req, res) => {
     const articles = articleService.getAllArticles();
@@ -18,6 +19,7 @@ const createArticle = (req, res) => {
         message: 'Article created successfully',
         article
     });
+    logger.info('Article created');
 };
 
 //GET /articles/:id
@@ -87,11 +89,31 @@ const updateArticle = (req, res) => {
     });
 };
 
+const publishArticle = (req, res) => {
+
+    const id = parseInt(req.params.id);
+
+    const article =
+        articleService.publishArticle(id);
+
+    if (!article) {
+        return res.status(404).json({
+            message: 'Article not found'
+        });
+    }
+
+    res.json({
+        message: 'Article published successfully',
+        article
+    });
+};
+
 module.exports = {
   getAllArticles,
   createArticle,
   getArticleById,
   searchArticles,
   deleteArticle,
-  updateArticle
+  updateArticle,
+  publishArticle
 };
