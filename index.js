@@ -3,8 +3,8 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-
-const port = process.env.PORT;
+const config = require('./config/config');
+const port = config.port;
 const morgan = require('morgan');
 
 
@@ -34,16 +34,14 @@ app.use('/news', newsRoutes);
 app.use('/auth', authRoutes);
 
 
-
 // Error Middleware MUST be after all routes
 app.use(errorHandler);
 
 // Start Server
-app.listen(port, () => {
+if (require.main === module) {
+  app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-});
-
-
-
-    
-    
+  });
+}
+ 
+module.exports = app;
