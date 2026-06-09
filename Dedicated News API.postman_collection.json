@@ -1,0 +1,298 @@
+{
+  "info": {
+    "_postman_id": "4e3db4b6-0ee0-4b7d-bb4e-83de19e90a58",
+    "name": "Dedicated News API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55438439",
+    "_collection_link": "https://go.postman.co/collection/55438439-4e3db4b6-0ee0-4b7d-bb4e-83de19e90a58?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Home",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/auth/login",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\" : \"Jannie\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/articles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/articles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "articles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/articles/:id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/articles/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "articles",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/articles",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikphbm5pZSIsImlhdCI6MTc4MDczNjA0MCwiZXhwIjoxNzgwNzM5NjQwfQ.KI11uLXY94L4Uqi1hMWybVCJdz7ZtpPxaEobw-whEN0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n     {\r\n        \"title\": \"JavaScript Tips\",\r\n        \"author\": \"Jannie\",\r\n        \"content\": \"Useful tricks\"\r\n        \r\n    \r\n    }\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/articles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "articles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/articles/:id",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"title\": \"NodeJS Basics\",\r\n        \"author\": \"Jannie\",\r\n        \"content\": \"Learning Express\"\r\n}    ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/articles/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "articles",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/articles/1/publish",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/articles/1/publish",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "articles",
+            "1",
+            "publish"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/articles/:id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/articles/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "articles",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/articles/search?title=",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/articles/search?title=node",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "articles",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "node"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/news",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/news",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "news"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/error",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/error",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "error"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
