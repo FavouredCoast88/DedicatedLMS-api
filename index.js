@@ -6,11 +6,13 @@ const app = express();
 const config = require('./config/config');
 const port = config.port;
 const morgan = require('morgan');
+const cors = require('cors');
 
 
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 app.use(morgan('dev'));
 
 // Routes
